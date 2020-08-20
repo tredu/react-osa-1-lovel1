@@ -1,32 +1,48 @@
 import React from 'react';
-import Course from './components/Course';
-import Picture from './components/Picture';
-import Link from './components/Link';
-import List from './components/List';
-import StudentList from './components/StudentList';
+import Tehtava1a from './components/Tehtava1a.js';
+import Tehtava1c from './components/Tehtava1c.js';
+import Tehtava2 from './components/Tehtava2.js';
 import './App.css';
-
-let students = ["Marko", "Lassi", "Emilia", "Susanna"];
-
 
 const App = () => {
   return (
-    <div className="App">
+    <>
       <header className="App-header">
-      <h1>React Alkeet Demoja</h1>
+        <h1>React Alkeet</h1>
       </header>
-      <section className="demo">
-      <StudentList names = {students} />
-      <Course name='Tiina Partanen' coursetitle='Ohjelmointikielet' classroom='2074'/>
-      <Picture title='Kuva 1' source='https://www.trafalgar.com/real-word/wp-content/uploads/sites/3/2019/10/giant-panda-750x400.jpg' desc='Ensimäinen teksti'/>
-      <Picture title='Kuva 2' source='https://www.peta.org/wp-content/uploads/2017/03/iStock-157381164_freder.jpg' desc='Toinen teksti'/>
-      <Link title='Linkki numero 1' link='https://yle.fi/' desc='Yle'/>
-      <Link title='Linkki numero 2' link='https://www.hs.fi/' desc='Helsingin Sanomat'/>
-      <List item='item1'/>
-      <List item='item2'/>
-      <List item='item3'/>
+
+      <section className="harjoitukset">
+      <div className="harjoitukset1">
+        <h1>Harjoitukset 1</h1>
+        <hr></hr>
+        <h2>Tehtävä 1a</h2>
+        <div className="teht1a">
+          <Tehtava1a kurssi="Ohjelmointikielet" ope="Tiina Partanen" luokka="2074" linkki="https://otredu.github.io/react/index.html" />
+          <Tehtava1a kurssi="Tietokannat" ope="Eerikki Maula" luokka="2069" linkki="https://otredu.github.io/tietokannat/index.html" />
+          <br></br>
+        </div>
+          <h2>Tehtävä 1c</h2>
+          <div className="teht1c">
+          <Tehtava1c name1="Maksim Petrov" age1="20" email1="makpet@email.com" imgsrc1="https://www.nautec.com/wp-content/uploads/2018/04/placeholder-person.png"
+                     name2="John Watson" age2="40" email2="jw@email.com" imgsrc2="https://www.nautec.com/wp-content/uploads/2018/04/placeholder-person.png"
+                     name3="Sherlock Holmes" age3="50" email3="sh@email.com" imgsrc3="https://www.nautec.com/wp-content/uploads/2018/04/placeholder-person.png"/>
+          <br></br>
+        </div>
+        <h2>Tehtävä 2</h2>
+        <div className="teht2">
+          <table>
+          <tr>
+            <th>Kurssi</th>
+            <th>Opettaja</th>
+            <th>Luokka</th>
+          </tr>
+          <Tehtava2 />
+          </table>
+          <br></br>
+        </div>
+      </div>
       </section>
-    </div>
+    </>
   );
 }
 

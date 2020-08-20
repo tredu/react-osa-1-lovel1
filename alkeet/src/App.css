@@ -42,3 +42,40 @@
     transform: rotate(360deg);
   }
 }
+
+.harjoitukset {
+  justify-content: center;
+  margin: auto;
+  width: 90%;
+}
+
+.Teht1aElement {
+  background-color: rgb(131, 179, 201);
+  margin-bottom: 20px;
+  padding: 5px;
+  background-clip: padding-box;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.student {
+  display: inline-block;
+  margin-right: 20px;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: rgb(131, 179, 201);
+  margin-bottom: 40px;
+}
+
+.teht2 table, th, td {
+  text-align: center;
+  background-color: rgb(131, 179, 201);
+}
+
+.teht2 th, td {
+  padding: 20px;
+}
+
+.teht2 table {
+  border-radius: 10px;
+}
