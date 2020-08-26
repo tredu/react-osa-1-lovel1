@@ -115,3 +115,39 @@
     monospace; 
   
 }
+
+.teht6 {
+  display: inline-block;
+}
+
+ul {
+  list-style-position: outside;
+  list-style: none;
+  padding: 10;
+  background-color: rgb(131, 179, 201);
+  margin: 0px;
+  padding: 0px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+li {
+  padding: 10px;
+}
+
+ul input {
+  margin: 10px;
+  padding: 5px;
+  border-radius: 10px;
+  border: 0px;
+  text-align: center;
+
+}
+ul button {
+  background-color: white;
+  padding: 5px;
+  border: solid 2px rgb(131, 179, 201);
+  border-radius: 10px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace; 
+}
