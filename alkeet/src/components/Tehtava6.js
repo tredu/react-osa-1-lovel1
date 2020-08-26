@@ -1,19 +1,29 @@
 import React, {useState} from 'react';
 
-const Tehtava6 = () => {
-    const Skills = ["HTML", "CSS", "JavaScript", "PHP"];
+const Tehtava6 = ({skills, setSkills, newSkill, setNewSkill}) => {
+    const addSkill = (event) => {
+        event.preventDefault();
+
+        setSkills(skills.concat(newSkill));
+
+        setNewSkill('');
+    }
+
+    const handleSkillChange = (event) => {
+    setNewSkill(event.target.value)
+    }
+
     return (
         <>
+        <h3>Olen oppinut seuraavia asioita:</h3>
         <ul>
-            {(Skills) => {
-                let x = Skills.split(',');
-                for (var i=0; i++;)
-                {
-                  x[i] = x[i] + '<br />';
-                  return <li>{x}</li>; 
-                }
-            }}
-        </ul>
+            <form onSubmit={addSkill}>
+                <input value={newSkill} onChange={handleSkillChange}/>
+                <button type="submit">Talenna</button>
+            </form> 
+            {skills.map((skill, i) =>
+                <li key={i}>{skill}</li>)}
+            </ul>
         </>
     )
 }

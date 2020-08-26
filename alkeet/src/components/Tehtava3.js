@@ -5,7 +5,7 @@ const Tehtava3 = ({countries}) => {
 
     return (
         countries.map(country =>
-            <div className="country">
+            <div key={country.id} className="country">
                 <h3 onClick={e => setShowcountry(!showCountry)}>>{country.country}</h3>
                 { showCountry && 
                 <div className={"countryInfo"}>

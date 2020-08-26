@@ -6,6 +6,7 @@ import Tehtava3 from './components/Tehtava3.js';
 import countries from './components/Tehtava3data.js';
 import './App.css';
 import Tehtava6 from './components/Tehtava6.js';
+import Tehtava7 from './components/Tehtava7.js';
 
 const App = () => {
 
@@ -14,6 +15,11 @@ const App = () => {
   const [show3, setShow3] = useState(false);
   const [show4, setShow4] = useState(false);
   const [show6, setShow6] = useState(false);
+  const [show7, setShow7] = useState(false);
+  const [skills, setSkills] = useState(["HTML", "CSS", "JavaScript", "PHP"]);
+  const [newSkill, setNewSkill] = useState("") ;
+  const [info, setInfo] = useState({});
+  const [newInfo, setNewInfo] = useState({desc: "", url:""});
   return (
     <>
       <header className="App-header">
@@ -82,7 +88,17 @@ const App = () => {
         </div>
         { show6 &&
         <div className="teht6">
-          <Tehtava6 />
+          <Tehtava6 skills = {skills} setSkills = {setSkills} newSkill={newSkill} setNewSkill={setNewSkill}/>
+          <br></br>
+        </div>
+        }
+        <div className="tehtHeader">
+          <h2>Tehtävä 7</h2>
+          <button onClick={e => setShow7(!show7)}>{show7 ? "Piilota" : "Näytä"}</button>
+          </div>
+        { show7 &&
+        <div className="teht7">
+          <Tehtava7 info ={info} setInfo={setInfo} newInfo={newInfo} setNewInfo={setNewInfo}/>
           <br></br>
         </div>
         }
