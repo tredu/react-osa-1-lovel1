@@ -151,3 +151,31 @@ ul button {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace; 
 }
+
+.linkForm form input {
+  margin-right: 10px;
+  padding: 3px;
+  border-radius: 10px;
+  border: 2px solid rgb(131, 179, 201);
+  text-align: center;
+}
+
+.linkForm form button {
+  background-color: white;
+  padding: 5px;
+  border: solid 2px rgb(131, 179, 201);
+  border-radius: 10px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace; 
+}
+
+.linkTextElement {
+  background-color: rgb(131, 179, 201);
+  margin-top: 40px;
+  margin-right: 20px;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+  display: inline-block;
+
+}

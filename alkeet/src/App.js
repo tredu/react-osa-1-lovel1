@@ -18,8 +18,8 @@ const App = () => {
   const [show7, setShow7] = useState(false);
   const [skills, setSkills] = useState(["HTML", "CSS", "JavaScript", "PHP"]);
   const [newSkill, setNewSkill] = useState("") ;
-  const [info, setInfo] = useState({});
-  const [newInfo, setNewInfo] = useState({desc: "", url:""});
+  const [info, setInfo] = useState([]);
+  const [newInfo, setNewInfo] = useState({desc:"", url:""});
   return (
     <>
       <header className="App-header">
@@ -98,7 +98,7 @@ const App = () => {
           </div>
         { show7 &&
         <div className="teht7">
-          <Tehtava7 info ={info} setInfo={setInfo} newInfo={newInfo} setNewInfo={setNewInfo}/>
+          <Tehtava7 info = {info} setInfo = {setInfo} newInfo = {newInfo} setNewInfo = {setNewInfo}/>
           <br></br>
         </div>
         }
