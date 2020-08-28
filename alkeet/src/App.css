@@ -59,6 +59,10 @@
   text-align: center;
 }
 
+.teht1c {
+  text-align: center;
+}
+
 .student {
   display: inline-block;
   margin-right: 20px;
@@ -178,4 +182,13 @@ ul button {
   border-radius: 10px;
   display: inline-block;
 
+}
+
+.linkTextElement button {
+  border-radius: 50px;
+  color: white;
+  background-color: rgb(231, 76, 76);
+  border: 0px;
+  margin-top: 10px;
+  margin-right: 5px;
 }

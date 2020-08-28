@@ -19,15 +19,18 @@ const Tehtava7 = ({info, setInfo, newInfo, setNewInfo}) => {
     }
 
 
-    const addLike = (id) => {
+    const addLike = id => {
         const tempInfo = info.map(info => {
             if(info.id === id){
                 info = {...info, likes: (info.likes + 1)};
             }
             return info;
         })
-        
+        setInfo(tempInfo);
     }
+
+    const likesAmount = info.map(infoElement => infoElement.likes);
+    const total = likesAmount.reduce((a, b) => a + b, 0);
 
     return (
         <div className="linkForm">
@@ -41,13 +44,15 @@ const Tehtava7 = ({info, setInfo, newInfo, setNewInfo}) => {
 
             <hr></hr>
 
+            <p>Kaikki tykkäykset: <b>{total}</b></p>
+
             {info.map((infoElement, i) =>
                 <div className="linkTextElement" key={i}>
                 
                 <p>{infoElement.desc}</p>
                 <a href={infoElement.url}>Linkki</a>
                 <br></br>
-                <button onClick={addLike(infoElement.id)}>Like!</button>
+                <button onClick={()=>addLike(infoElement.id)}>Like!</button>
                 <span>{infoElement.likes}</span>
                 </div>)}
         </div>

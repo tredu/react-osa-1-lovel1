@@ -60,12 +60,16 @@ const App = () => {
         { show3 && 
         <div className="teht2">
           <table>
+          <thead>
           <tr>
             <th>Kurssi</th>
             <th>Opettaja</th>
             <th>Luokka</th>
           </tr>
+          </thead>
+          <tbody>
           <Tehtava2 />
+          </tbody>
           </table>
           <br></br>
         </div>
