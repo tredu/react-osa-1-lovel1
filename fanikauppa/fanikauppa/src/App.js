@@ -16,15 +16,11 @@ function App() {
     <Container fluid>
     <Row>
     <Col xs={8}>
-    <Row xs="4" className="mainRow mt-5">
+    <Row md="4" className="mainRow mt-5 justify-content-center ">
     <Products ProductData = {ProductData} />
     </Row>
     </Col>
-    <Row className="mainRow mt-5">
-    <Col xs={4} className="cart p-4 border m-4 shadow-lg">
     <Cart />
-    </Col>
-    </Row>
     </Row>
     </Container>
     </>
