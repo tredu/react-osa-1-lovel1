@@ -42,3 +42,8 @@
   border: solid 1px #2997F7;
   color: white;
 }
+
+.pic {
+  height: 300px;
+  max-width: 250px;
+}

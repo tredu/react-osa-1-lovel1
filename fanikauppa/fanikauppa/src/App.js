@@ -1,35 +1,30 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import NavbarComponent from './components/NavbarComponent.js';
+import ProductData from './components/ProductData.js';
+import Products from './components/Products.js';
+import Cart from './components/Cart.js';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
+import Col from 'react-bootstrap/Col';
 
 function App() {
   return (
     <>
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-    <Navbar.Brand className="ml-5">Fanikauppa</Navbar.Brand>
-    <Nav className="ml-auto mr-5">
-      <Navbar.Text className="mr-4">
-      Signed in as: <b>User</b>
-      </Navbar.Text>
-      <Button variant="outline-info">Cart</Button>
-      <Button variant="outline-info" className="ml-3">Log Out</Button>
-    </Nav>
-    </Navbar>
-    <Container className="p-4">
+    <NavbarComponent />
+    <Container fluid>
     <Row>
-      <Col className="text-center" md={8}>
-        4
-      </Col>
-      <Col className="text-center" md={4}>
-        4
-      </Col>
+    <Col xs={8}>
+    <Row xs="4" className="mainRow mt-5">
+    <Products ProductData = {ProductData} />
+    </Row>
+    </Col>
+    <Row className="mainRow mt-5">
+    <Col xs={4} className="cart p-4 border m-4 shadow-lg">
+    <Cart />
+    </Col>
+    </Row>
     </Row>
     </Container>
     </>
