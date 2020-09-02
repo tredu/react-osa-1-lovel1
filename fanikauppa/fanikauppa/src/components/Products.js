@@ -4,11 +4,21 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Image from 'react-bootstrap/Image';
 
-const Products = ({ProductData}) => {
+const Products = ({cartItems, setCartItems}) => {
+
+  const addAmount = id => {
+    const tempAddAmount = cartItems.map(cartItems => {
+        if(cartItems.id === id){
+          cartItems = {...cartItems, amount: (cartItems.amount + 1)};
+        }
+        return cartItems;
+    })
+    setCartItems(tempAddAmount);
+  }
 
     return (
       <>
-        {ProductData.map(product =>
+        {cartItems.map(product =>
           <Col className="product p-4 border m-4 shadow-lg rounded" key={product.id}>
             <h5>{product.name}</h5>
             <p className="text-muted">Category: {product.category}</p>
@@ -17,7 +27,7 @@ const Products = ({ProductData}) => {
             <br></br>
             <p>Price: <b>{product.price}</b> €</p>
             <hr></hr>
-            <Button variant="info" className="float-right">Add to Cart</Button>
+            <Button onClick={()=>addAmount(product.id)} variant="info" className="float-right" >Add to Cart</Button>
           </Col>
         )}
       </>

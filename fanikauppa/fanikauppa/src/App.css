@@ -38,11 +38,19 @@
 }
 
 .cartButton {
-  border-radius: 10px;
-  border: solid 1px #2997F7;
-  color: white;
+
 }
 
 .pic {
   max-height: 300px;
 }
+
+.cartItemElement {
+  margin: 10px;
+}
+
+.textPlusBtn {
+  display: flex;
+}
+
+
