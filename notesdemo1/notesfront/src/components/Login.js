@@ -3,26 +3,25 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import FormLabel from 'react-bootstrap/FormLabel';
-import FormGroup from 'react-bootstrap/FormGroup';
-import FormControl from 'react-bootstrap/FormControl';
 
 const Login = ({submitHandler}) => {
+    const [userName, setUserName] = useState("");
+    const [userPassword, setUserPassword] = useState("");
     return (
         <Row className="text-center justify-content-center">
         <Col xs={4}>
         <br></br>
         <h2>Login</h2>
         <br></br>
-        <Form onSubmit={e=>submitHandler(e, {username: "user1", password:"salasana"})}>
+        <Form onSubmit={e=>submitHandler(e, {username: userName, password: userPassword})}>
             <Form.Group>
                 <Form.Label>Username</Form.Label>
-                <Form.Control type="username" placeholder="Username" />
+                <Form.Control onChange={event => setUserName(event.target.value)} type="username" placeholder="Username" />
             </Form.Group>
 
             <Form.Group>
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control onChange={event => setUserPassword(event.target.value)} type="password" placeholder="Password" />
             </Form.Group>
 
             <Button variant="primary" type="submit">
