@@ -15,17 +15,17 @@ const Registration = () => {
         <Form>
             <Form.Group>
                 <Form.Label>Username</Form.Label>
-                <Form.Control type="username" placeholder="Username" />
+                <Form.Control type="username" placeholder="Username"/>
             </Form.Group>
 
             <Form.Group>
                 <Form.Label>Email</Form.Label>
-                <Form.Control type="email" placeholder="Email" />
+                <Form.Control type="email" placeholder="Email"/>
             </Form.Group>
 
             <Form.Group>
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" />
+                <Form.Control type="password" placeholder="Password"/>
             </Form.Group>
 
 
