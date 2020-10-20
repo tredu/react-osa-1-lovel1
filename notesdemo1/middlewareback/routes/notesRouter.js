@@ -25,8 +25,13 @@ router.post('/', (req, res, next) => {
     const note = req.body;
     console.log(note);
 
+    if (note.content === undefined || note.date === undefined || note.important === undefined) {
+        return res.status(400).json(
+            { error: "check json-data"}
+        )
+    }
 
-    note.user_id = res.locals.auth.userId
+    note.user_id = res.locals.auth.userId;
 
     knex('notes').insert(note)
         .then(id_arr => {
@@ -45,9 +50,6 @@ router.post('/', (req, res, next) => {
 })
 
 router.delete('/:id', (req, res, next) => {
-    const id = req.params.id;
-    console.log(id);
-
     const decodedTokenId = res.locals.auth.userId;
 
     knex('notes').select('*').where('id', '=', decodedTokenId).del()
@@ -63,6 +65,23 @@ router.delete('/:id', (req, res, next) => {
         })
 })
 
-router.put('/:id', (req, res))
+router.put('/:id', (req, res, next) => {
+const id = req.param.id;
+const note = req.body;
+
+const decodedTokenId = res.locals.auth.userId;
+
+knex('notes').update(note, ['content', 'important', 'date']).where('id', '=', decodedTokenId).andWhere('id','=', id)
+    .then(response => {
+        console.log(response)
+        res.status(204).end();
+    })
+    .catch((err) => {
+        console.log(err);
+        res.status(500).json(
+            { error: err }
+        )
+    })
+})
 
 module.exports = router;
