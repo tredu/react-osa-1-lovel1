@@ -1,3 +1,9 @@
+const testPassword = "salasana"
+
+var bcrypt = require('bcryptjs');
+var salt = bcrypt.genSaltSync(10);
+var hash = bcrypt.hashSync(testPassword, salt);
+
 exports.seed = function(knex) {
     // Deletes ALL existing entries
     return knex('users').del()
@@ -6,20 +12,20 @@ exports.seed = function(knex) {
         return knex('users').insert([
           {
             id: 1,
-            username: "HTML is easy",
-            password: "2020-01-10T17:30:31.098Z",
+            username: "user1111111",
+            password: hash,
             email: true,
           },
           {
             id: 2,
-            username: "HTML is easy",
-            password: "2020-01-10T17:30:31.098Z",
+            username: "user2222222",
+            password: hash,
             email: true,
           },
           {
             id: 3,
-            username: "HTML is easy",
-            password: "2020-01-10T17:30:31.098Z",
+            username: "user33333333",
+            password: hash,
             email: true,
           }
       
